@@ -1,0 +1,19 @@
+;program to display single character on screen
+title proghjt1.ASM
+dosseg
+.model small
+.stack 0100h
+.code
+    mov ah, 2   
+    mov dl, 41H 
+    int 21H
+    mov dl, 42H
+    int 21H
+    mov dl, 43H
+    int 21H
+
+    mov ah, 4ch
+    int 21H
+    int 20H
+
+end
