@@ -1,0 +1,26 @@
+;program to display text
+title proghjt2.ASM
+dosseg
+.MODEL SMALL
+.STACK 100H 
+.DATA
+    STRING DB 'I LOVE ',40H,'$'
+    STRING2 DB 10,13,'ASSEMBLY LANGUAGE ',40H,'$' 
+
+.CODE
+
+    MOV AX,@DATA ;@ is like a pointer looing at .data
+    MOV DS,AX
+    
+    LEA DX,STRING ;Load Effective Address
+    MOV AH,9
+    INT 21H     
+  
+    LEA DX,STRING2 ;Load Effective Address
+    MOV AH,9
+    INT 21H  
+
+    MOV AH,4CH
+    INT 21H
+  
+END
